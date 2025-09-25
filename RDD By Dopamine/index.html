@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RDD - Downloader (static)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>RDD - Downloader (static)</h1>
+
+    <label>Binary Type:
+      <select id="binaryType">
+        <option>WindowsPlayer</option>
+        <option>WindowsStudio</option>
+        <option>WindowsStudio64</option>
+        <option>MacPlayer</option>
+        <option>MacStudio</option>
+      </select>
+    </label>
+
+    <label>Channel Name:
+      <input id="channel" placeholder="LIVE" value="LIVE" />
+    </label>
+
+    <label>Version Hash:
+      <input id="version" placeholder="(Optional)" />
+    </label>
+
+    <label class="row">
+      <input type="checkbox" id="compress" />
+      Compress Output Zip
+    </label>
+
+    <label>Zip Compression Level (1-9):
+      <input id="zipLevel" type="number" min="1" max="9" value="5" />
+    </label>
+
+    <div class="buttons">
+      <button id="btnSpecified">Download Specified Hash</button>
+      <button id="btnLatest">Download Latest Version</button>
+      <button id="btnPrevious">Download Previous Version</button>
+      <button id="btnCopyLink">Copy Permanent Link</button>
+    </div>
+
+    <pre id="log" class="log"></pre>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
