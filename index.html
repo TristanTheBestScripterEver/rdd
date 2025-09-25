@@ -1,51 +1,47 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>RDD - Downloader (static)</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RDD Downloader</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
-    <h1>RDD - Downloader (static)</h1>
+  <div class="container">
+    <h1>Roblox Deployment Downloader</h1>
 
-    <label>Binary Type:
-      <select id="binaryType">
-        <option>WindowsPlayer</option>
-        <option>WindowsStudio</option>
-        <option>WindowsStudio64</option>
-        <option>MacPlayer</option>
-        <option>MacStudio</option>
-      </select>
-    </label>
+    <label for="binaryType">Binary Type:</label>
+    <select id="binaryType">
+      <option value="WindowsPlayer">WindowsPlayer</option>
+      <option value="WindowsStudio">WindowsStudio</option>
+      <option value="MacPlayer">MacPlayer</option>
+      <option value="MacStudio">MacStudio</option>
+      <option value="LinuxPlayer">LinuxPlayer</option>
+    </select>
 
-    <label>Channel Name:
-      <input id="channel" placeholder="LIVE" value="LIVE" />
-    </label>
+    <label for="channelName">Channel Name:</label>
+    <input type="text" id="channelName" placeholder="LIVE" value="LIVE">
 
-    <label>Version Hash:
-      <input id="version" placeholder="(Optional)" />
-    </label>
+    <label for="versionHash">Version Hash:</label>
+    <input type="text" id="versionHash" placeholder="(Optional)">
 
-    <label class="row">
-      <input type="checkbox" id="compress" />
-      Compress Output Zip
-    </label>
-
-    <label>Zip Compression Level (1-9):
-      <input id="zipLevel" type="number" min="1" max="9" value="5" />
-    </label>
-
-    <div class="buttons">
-      <button id="btnSpecified">Download Specified Hash</button>
-      <button id="btnLatest">Download Latest Version</button>
-      <button id="btnPrevious">Download Previous Version</button>
-      <button id="btnCopyLink">Copy Permanent Link</button>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="compress">
+        Compress Output Zip
+      </label>
     </div>
 
-    <pre id="log" class="log"></pre>
-  </main>
+    <label for="zipLevel">Zip Compression Level (1-9):</label>
+    <input type="number" id="zipLevel" min="1" max="9" value="5">
+
+    <div class="buttons">
+      <button onclick="download('hash')">Download Specified Hash</button>
+      <button onclick="download('latest')">Download Latest Version</button>
+      <button onclick="download('previous')">Download Previous Version</button>
+      <button onclick="copyLink()">Copy Permanent Link</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
